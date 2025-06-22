@@ -101,3 +101,57 @@ That's it! You’re now ready to:
 3. **Real-time video scanning support** – For live streams and time-based watermark detection.
 4. **Cross-platform integration APIs** – Plug directly into Story Protocol, YouTube, TikTok etc. for takedown automation.
 5. **Creator reward pool** – Pay creators when infringers are penalized via bounty capture.
+
+## ❓ Q&A from Judges
+
+### 🎥 Why Are There Recordings on the Front Page?
+We use [ScreenPipe](https://screenpi.pe/), an open-source 24/7 screen/audio recording tool. It allows users to passively record their screens and, with permission, automatically upload recordings to our server.
+
+There are two types of recording contributions:
+- **Automatic uploads** (if no privacy issues are detected)
+- **Manual uploads** (if privacy-related content is flagged)
+
+These recordings appear on the dashboard to await further scanning or validation by contributors.
+
+---
+
+### 💰 Why Upload to "Earn from Copyright Detection"?
+We reward users in two main roles:
+
+#### 1. **User A – Recording Contributor (Low Resource)**
+- Contributes screen/audio recordings
+- Uses minimal system resources (~10% CPU, 4GB RAM)
+- Helps feed the system with diverse real-world data
+
+#### 2. **User B – Processing Contributor (High Resource)**
+- Downloads AI models and recordings from User A
+- Runs AI inference locally using their GPU
+- Detects potential IP violations and submits structured results
+- Earns higher token rewards for GPU compute work
+
+The system is designed to reward both roles, especially when copyright infringement is successfully detected. Since we monetize this detection for IP creators, we redistribute a portion of that revenue to contributors.
+
+---
+
+### 🧠 What happens in the Data Labelling Tab?
+This tab is specifically designed for processing contributors (User B or technically inclined users). It allows them to:
+
+- **Download AI models** (prepared by protocol, third party partnership or open source) 
+- **Download recording file** from the server (contributed by user A)
+- **Run batch processing** for multiple recording
+- **Submit detection results** to the server
+
+This creates a peer-to-peer-style processing system where anyone can help enforce IP rights.
+
+---
+
+### ⚠️ UX Note – Why Separate Dashboard & Data Labelling Tabs?
+A key UX consideration came up with **User C**, who both uploads recordings (like user A) and processes them (like user B).
+
+Since most recordings are auto-uploaded to the server, **user C has to compete with other processing contributors** to scan their recording, even their own recordings. Ideally, they would be able to process and upload results directly — but we chose not to for a few reasons:
+
+1. We anticipate most creators will want to contribute only recordings (user A role).
+2. Processing recordings is resource-intensive (GPU-heavy), so we expect to manually onboard dedicated data processing teams (user B role) to help scale AI inference on IP infringement.
+3. This separation makes it easier to manage user incentives (prevent self recording & processing cheating behaviour), workflows, and future improvements like DAO-based arbitration or bounties.
+
+---
